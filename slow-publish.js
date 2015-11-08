@@ -47,6 +47,7 @@ if (Meteor.isServer) {
   Documents._ensureIndex({createdAt: 1});
 
   Meteor.publish('last-document', function () {
+    // If -1 is changed to 1, then everything is fast as well.
     return Documents.find({}, {sort: {createdAt: -1}, limit: 1});
   });
 
