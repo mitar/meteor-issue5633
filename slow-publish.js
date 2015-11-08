@@ -12,6 +12,13 @@ if (Meteor.isClient) {
     }
   });
 
+  /* It can also be just an autorun.
+  Tracker.autorun(function () {
+    // Comment this line out to make subscription fast.
+    return Documents.findOne({}, {sort: {createdAt: -1}});
+  });
+  */
+
   Template.hello.events({
     'click button': function () {
       var start = new Date().valueOf();
