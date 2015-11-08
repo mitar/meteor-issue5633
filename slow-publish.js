@@ -8,7 +8,7 @@ if (Meteor.isClient) {
   Template.hello.helpers({
     latest: function () {
       // Comment this line out to make subscription fast.
-      return Documents.findOne({}, {sort: {createdAt: -1}, limit: 1});
+      return Documents.findOne({}, {sort: {createdAt: -1}});
     }
   });
 
